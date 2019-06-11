@@ -1,0 +1,386 @@
+import java.util.concurrent.TimeUnit;
+import java.awt.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        Scanner sc = new Scanner(System.in);
+        int cagess = 0;
+        Cage cage = new Cage();
+        ArrayList<Animal> List = new ArrayList<>();
+        ArrayList<Cage> ListC = new ArrayList<>();
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.print("Insert ");
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.print("login:  ");
+        String login = sc.nextLine();
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.print("Insert ");
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.print("password:  ");
+
+        String password = sc.nextLine();
+        if ((login.equals("observer.Morozov")) & (password.equals("2281488"))) {
+            while (true) {
+
+                System.out.println("1.  Add new SCP object");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("2.  Exterminate SCP object");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("3.  Show all SCP objects");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("4.  Add new containment facility");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("5.  Remove containment facility");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("6.  Move SCP object to containment facility");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("7.  Remove SCP object from containment facility");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("8.  Show SCP foundation database");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("9.  Switch facility guard");
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("10. Exit");
+
+                int a = sc.nextInt();
+                if (a == 1) {
+                    while (true) {
+
+
+                        System.out.println("Insert name of SCP object");//Ввод вида
+                        String an = sc.nextLine();
+                        an = sc.nextLine();
+                        animal.setType(an);
+
+
+                        System.out.println("Insert codename of SCP object");//Ввод имени
+                        String na = sc.nextLine();
+                        animal.setName(na);
+
+
+                        System.out.println("Insert class of SCP object");//Ввод семейства
+                        String fa = sc.nextLine();
+                        animal.setFamily(fa);
+
+
+                        System.out.println("Insert the danger level");
+                        int l = sc.nextInt();
+                        animal.setLD(l);
+
+
+                        System.out.println("Analyzing...");
+                        try {
+                            TimeUnit.SECONDS.sleep(5);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println("Congratulations! SCP object has been added! Please, check out written information");
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.printf("№%s   %s   %s   %s   %s", animal.getCage(), animal.getType(), animal.getName(), animal.getFamily(), animal.getLD());
+                        System.out.println();
+                        List.add(animal);
+                        try {
+                            TimeUnit.SECONDS.sleep(3);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        System.out.println("Press 1, to continue, press 0, to stop this operation");
+                        if (sc.nextInt() == 0) {
+                            break;
+                        }
+                    }
+                } else if (a == 2) {
+                    System.out.println("Choose SCP object to exterminate");
+                    String name = sc.nextLine();
+                    for (Animal an : List) {
+                        if (an.getName().equals(name)) {
+                            List.remove(an);
+                        }
+                    }
+
+                } else if (a == 3) {
+
+                    System.out.println("SCP objects:");
+                    for (int i = 0; i < List.size(); i++) {
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.printf("%s    %s    %s    %s    %s\n", List.get(i).getCage(), List.get(i).getType(), List.get(i).getName(), List.get(i).getFamily(), List.get(i).getLD());
+                    }
+
+                } else if (a == 4) {
+                    while (true) {
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println("Insert number of facility");//Ввод номера
+                        int n = sc.nextInt();
+                        cage.setNumber(n);
+
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println("Insert surname of reliable");//Ввод имени ответственного
+                        String na = sc.nextLine();
+                        na = sc.nextLine();
+                        cage.setRel(na);
+                        animal.setRel(na);
+
+
+                        System.out.println("Analyzing...");
+                        try {
+                            TimeUnit.SECONDS.sleep(5);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println("Congratulations! New facility has been added! Please, check out written information");
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.printf("№%s   %s   %s", cage.getNumber(), cage.getAOA(), cage.getRel());
+                        System.out.println();
+                        ListC.add(cage);
+                        cagess = cagess + 1;
+                        try {
+                            TimeUnit.SECONDS.sleep(3);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println("Press 1, to continue, press 0, to stop this operation");
+                        if (sc.nextInt() == 0) {
+                            break;
+                        }
+                    }
+
+                } else if (a == 5) {
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Choose facility to remove");
+                    int cagen = sc.nextInt();
+                    for (Cage n : ListC) {
+                        if (n.getNumber() == cagen) {
+                            ListC.remove(n);
+                        }
+                    }
+                } else if (a == 6) {
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Choose SCP object to move");
+                    int index = sc.nextInt();
+                    animal = List.get(index - 1);
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Insert number of facility");//Ввод номера клетки
+                    int n = sc.nextInt();
+                    animal.setCage(n);
+                    cage.setAOA(+1);
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Analyzing...");
+                    try {
+                        TimeUnit.SECONDS.sleep(5);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Congratulations! New animal has been added in cage!");
+                    try {
+                        TimeUnit.SECONDS.sleep(3);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (n != cagess) {
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println("Error! There is no such facility. Please add it in Main menu >> 4.");
+                        break;
+                    }
+                } else if (a == 7) {
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Choose SCP object to remove from facility");
+                    int index = sc.nextInt();
+                    animal = List.get(index - 1);
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Insert number of facility");//Ввод номера клетки
+                    int n = sc.nextInt();
+                    animal.setCage(0);
+                    cage.setAOA(-1);
+                    System.out.println("Analyzing...");
+                    try {
+                        TimeUnit.SECONDS.sleep(5);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Congratulations! Animal has been removed from cage!");
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (n != cagess) {
+                        System.out.println("Error! There is no such facility. Please add it in Main menu >> 4.");
+                        break;
+                    }
+                } else if (a == 8) {
+                    System.out.println("DCP ZOO DATABASE");
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    for (int i = 0; i < List.size(); i++) {
+                        System.out.printf("%s    %s    %s    %s    %s    %s\n", List.get(i).getCage(), ListC.get(i).getAOA(), List.get(i).getType(), List.get(i).getName(), List.get(i).getFamily(), List.get(i).getLD(), List.get(i).getRel());
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                } else if (a == 9) {
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Chose facility where you want to switch guard");
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    int index = sc.nextInt();
+                    cage = ListC.get(index - 1);
+                    System.out.println("Insert surname of reliable");//Ввод фамилии нового ответсвенного
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    String newRel = sc.nextLine();
+                    cage.setRel(newRel);
+                    System.out.println("Congratulations! New reliable has been switched and turned to class D.");
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else if (a == 10) {
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("System shutting down...");
+                    try {
+                        TimeUnit.SECONDS.sleep(5);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                }
+
+            }
+        }
+        else
+        {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Error! Wrong login/password! Facility guard will arrive soon!");
+        }
+    }
+}
