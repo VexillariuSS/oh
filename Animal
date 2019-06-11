@@ -1,0 +1,69 @@
+import com.sun.org.apache.bcel.internal.generic.LDC;
+
+public class Animal
+{
+   private String reliable;
+   private String family;
+   private String name;
+   private String type;
+   private int LD;
+   private int CN;
+    public Animal(int CNc,String typec,String namec)
+    {
+        name = namec;
+        type = typec;
+        CN = CNc;
+
+    }
+    public Animal()
+    {
+
+    }
+    public Animal(int CNc,String typec,String namec, String familyc,int LDc)
+    {
+        name = namec;
+        type = typec;
+        CN = CNc;
+        family = familyc;
+        LD = LDc;
+
+    }
+    public String getRel() {return(reliable);}
+    public void setRel(String Relc) {reliable = Relc;}
+    public String getName()
+    {
+        return(name);
+    }
+    public void setLD(int LDc){LD = LDc;}
+    public void setName(String Namec)
+    {
+        name = Namec;
+    }
+    public String getType()
+    {
+        return(type);
+    }
+    public void setType(String typec)
+    {
+        type = typec;
+    }
+    public String getFamily()
+    {
+        return(family);
+    }
+    public void setFamily(String familyc)
+    {
+        family = familyc;
+    }
+    public int getCage()
+    {
+        return(CN);
+    }
+    public void setCage(int CNc)
+    {
+        CN = CNc;
+    }
+    public int getLD(){return(LD);}
+
+
+}
