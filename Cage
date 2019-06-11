@@ -1,0 +1,23 @@
+public class Cage
+{
+    int number;
+    int amountOfAnimals;
+    String reliability;
+    public Cage(int numberc, int ac, String rc)
+    {
+     number = numberc;
+     amountOfAnimals = ac;
+     reliability = rc;
+    }
+    public Cage()
+    {
+
+    }
+    public int getNumber(){return(number);}
+    public void setNumber(int numberc){number = numberc;}
+    public int getAOA(){return(amountOfAnimals);}
+    public void setAOA(int ac){amountOfAnimals = ac;}
+    public String getRel(){return(reliability);}
+    public void setRel(String rc){reliability = rc;}
+
+}
